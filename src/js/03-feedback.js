@@ -12,7 +12,8 @@ const saveData = evt => {
   formData[name] = value;
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 };
-//
+
+
 const submitForm = evt => {
   evt.preventDefault();
   const {
@@ -26,7 +27,8 @@ const submitForm = evt => {
   localStorage.removeItem(STORAGE_KEY);
   formData = {};
 };
-//
+
+
 const populateTextArea = evt => {
   const parcedMessageToSave = JSON.parse(localStorage.getItem(STORAGE_KEY));
   if (parcedMessageToSave) {
@@ -34,7 +36,8 @@ const populateTextArea = evt => {
     emailLabel.value = parcedMessageToSave.email;
   }
 };
-//
+
+
 populateTextArea();
 //
 form.addEventListener(`submit`, submitForm);
